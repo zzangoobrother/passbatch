@@ -1,0 +1,17 @@
+spring:
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+#        ddl-auto: create
+
+#  datasource:
+#    url: jdbc:h2:tcp://localhost/~/ecomap;MODE=MYSQL
+#    username: sa
+#    password: 123
+#    driver-class-name: org.h2.Driver
+
+logging:
+  level:
+    org.hibernate.type.descriptor.sql: trace
