@@ -42,6 +42,9 @@ dependencies {
     // mapstruct
     implementation 'org.mapstruct:mapstruct:1.5.2.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.2.Final'
+
+    // csv
+    implementation 'com.opencsv:opencsv:5.7.0'
 }
 
 tasks.named('test') {
