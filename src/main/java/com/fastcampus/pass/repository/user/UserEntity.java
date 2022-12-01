@@ -16,6 +16,7 @@ import java.util.Map;
 @ToString
 @Entity
 @Table(name = "users")
+@TypeDef(name = "json", typeClass = JsonType.class)
 public class UserEntity extends BaseEntity {
 
     @Id
@@ -25,5 +26,16 @@ public class UserEntity extends BaseEntity {
     @Enumerated(EnumType.STRING)
     private UserStatus status;
     private String phone;
-    private String meta;
+
+    @Type(type = "json")
+    private Map<String, Object> meta;
+
+    public String getUuid() {
+        String uuid = null;
+        if (meta.containsKey("uuid")) {
+            uuid = String.valueOf(meta.get("uuid"));
+        }
+
+        return uuid;
+    }
 }
